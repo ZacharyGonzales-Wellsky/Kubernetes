@@ -1,23 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  mydeployment
+  name: ubuntuserver
   labels:
-    name:  mydeployment
+    os: ubuntu
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
-      server: nginx
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
+      os: ubuntu
   template:
     metadata:
       labels:
-        server: nginx
+        os:  ubuntu
     spec:
       containers:
       - name: nginxcontainer
@@ -27,4 +22,4 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-          - containerPort: 80
+          - containerPort: 8080
