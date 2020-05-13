@@ -15,11 +15,11 @@ spec:
         os:  ubuntu
     spec:
       containers:
-      - name: nginxcontainer
-        image: nginx:latest
+      - name: ubuntu
+        image: ubuntu
         resources:
           limits:
-            memory: "128Mi"
+            memory: "500m"
             cpu: "500m"
         ports:
           - containerPort: 8080
