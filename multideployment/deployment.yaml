@@ -15,7 +15,7 @@ spec:
         os:  ubuntu
     spec:
       containers:
-      - name: ubuntu
+      - name: ubuntu1
         image: ubuntu
         resources:
           limits:
@@ -29,6 +29,6 @@ spec:
           limits:
             memory: "500Mi"
             cpu: "500m"
-        command: ["/bin/bash", "-C"]
+        command: ["/bin/bash", "-c"]
         args:
           - sleep 300
