@@ -1,2 +1,2 @@
 # Kubernetes
-Kubernetes deployment scripts
+Kubernetes deployment scripts for minikube environment
