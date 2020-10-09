@@ -45,3 +45,27 @@ kubectl desribe pods <pod-name> | grep <yaml-key-name> (e.g Status:)
 ```
 kubectl get pods <pod-name> -o yaml
 ```
+
+## Object Managment
+
+### Imperative Object Management
+#### Fast but requires detailed knowledge, no track record
+```
+kubectl create namespace ckad
+kubectl run nginx --image=nginx --restart=Never -n ckad
+kubectl edit pod/nginx -n ckad
+```
+### Declarative Object Management
+#### Suitable for more elaborate changes, tracks changes
+```
+vim nginx-pod.yaml
+kubectl create -f nginx-pod.yaml
+kubectl delete pod/nginx
+```
+### Hybrid Approach
+#### Generate YAML file with kubectl but make further eids
+```
+kubectl run nginx --image --restart=Never --dry-run -o yaml > nginx-pod.yaml
+vim nginx-pod.yaml
+kubectl apply -f nginx-pod.yaml
+```
