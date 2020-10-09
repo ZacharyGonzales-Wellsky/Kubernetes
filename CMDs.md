@@ -63,7 +63,7 @@ kubectl create -f nginx-pod.yaml
 kubectl delete pod/nginx
 ```
 ### Hybrid Approach
-#### Generate YAML file with kubectl but make further eids
+#### Generate YAML file with kubectl but make further edits
 ```
 kubectl run nginx --image --restart=Never --dry-run -o yaml > nginx-pod.yaml
 vim nginx-pod.yaml
