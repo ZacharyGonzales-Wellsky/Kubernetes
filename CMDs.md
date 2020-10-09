@@ -24,6 +24,16 @@ kubectl describe pvc claim
 ```
 kubectl delete pod <pod-name> --grace-period=0 --force
 ```
+### Finding Object Information - grep is your friend!
+
+#### Get pods contextual information based on number of lines and text
+```
+kubectl describe pods | grep -C 10 "author=John Doe"
+```
+```
+kubectl get pods -o yaml | grep -C 5 labels:
+```
+
 
 ## Inspecting a Pod's Status
 
