@@ -33,7 +33,7 @@ kubectl describe pods | grep -C 10 "author=John Doe"
 ```
 kubectl get pods -o yaml | grep -C 5 labels:
 ```
-
+### Pod Lifecylce Phases
 
 ## Inspecting a Pod's Status
 
